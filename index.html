@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Leon Lau | English-Chinese Interpreter & Sourcing Agent in China</title>
+<meta name="description" content="Freelance English-Chinese interpreter and purchasing agent in China. Trade-show interpreting, factory visits, escort interpretation and sourcing. Published rates, written quote in 12 hours." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#191714',
+        cream: '#faf8f4',
+        accent: '#ea580c',
+        muted: '#6f6a62',
+        line: '#e5e0d8'
+      },
+      fontFamily: {
+        serif: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui']
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #faf8f4; }
+  .eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: all .7s ease; }
+  .reveal.on { opacity: 1; transform: none; }
+  .rot-word::after { content: '·'; margin-left: .35rem; color: #ea580c; }
+  details[open] .faq-plus { transform: rotate(45deg); }
+  .faq-plus { transition: transform .25s ease; }
+  ::selection { background: #ea580c; color: #fff; }
+
+  /* 城市网络：圆盘脉冲光晕 */
+  #cityNetwork > div > div:first-child {
+    position: relative;
+  }
+  #cityNetwork > div > div:first-child::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: rgba(234,88,12,0.15);
+    animation: cityPulse 2.5s ease-in-out infinite;
+    z-index: -1;
+  }
+  @keyframes cityPulse {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.15); opacity: 0; }
+  }
+  /* 连线流动动画 */
+  #cityLines line {
+    stroke-dasharray: 6 12;
+    animation: lineFlow 2s linear infinite;
+  }
+  @keyframes lineFlow {
+    to { stroke-dashoffset: -36; }
+  }
+  /* 流动光点 */
+  .flow-dot {
+    animation: dotTravel 3s linear infinite;
+  }
+  @keyframes dotTravel {
+    from { offset-distance: 0%; }
+    to { offset-distance: 100%; }
+  }
+</style>
+</head>
+<body class="font-sans text-ink antialiased">
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="fixed top-0 inset-x-0 z-50 bg-cream/90 backdrop-blur border-b border-line">
+  <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#top" class="font-serif text-lg font-semibold">Leon Lau <span class="text-muted font-normal">刘</span></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#services" class="hover:text-accent transition-colors">Services</a>
+      <a href="#rates" class="hover:text-accent transition-colors">Rates</a>
+      <a href="#worklog" class="hover:text-accent transition-colors">Work Log</a>
+      <a href="#faq" class="hover:text-accent transition-colors">FAQ</a>
+      <a href="#quote" class="open-modal bg-ink text-cream px-5 py-2 rounded-full hover:bg-accent transition-colors" data-modal="quoteModal">Get a Quote</a>
+    </div>
+    <button id="menuBtn" class="md:hidden text-xl"><i class="fas fa-bars"></i></button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-line bg-cream px-5 py-4 space-y-3 text-sm font-medium">
+    <a href="#services" class="block">Services</a>
+    <a href="#rates" class="block">Rates</a>
+    <a href="#worklog" class="block">Work Log</a>
+    <a href="#faq" class="block">FAQ</a>
+    <a href="#quote" class="open-modal block bg-ink text-cream px-5 py-2 rounded-full text-center" data-modal="quoteModal">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<header id="top" class="relative pt-52 pb-44 px-5 overflow-hidden" style="background-image: linear-gradient(135deg, rgba(25,23,20,0.55) 0%, rgba(25,23,20,0.35) 50%, rgba(234,88,12,0.55) 100%), url('hero-bg.jpg.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+  <!-- 径向光晕装饰（橙白调，更鲜明） -->
+  <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle at 20% 50%, rgba(234,88,12,0.30) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.20) 0%, transparent 50%);"></div>
+  <div class="relative max-w-6xl mx-auto">
+    <p class="eyebrow text-white/50 mb-8">EN ⇄ 中文 · China interpreter · Trade &amp; sourcing</p>
+    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl leading-[1.08] font-medium max-w-4xl text-white">
+      Book a China interpreter
+      <span class="block mt-3 text-white/60">
+        <em id="rotator" class="text-white not-italic font-semibold">for trade shows.</em>
+      </span>
+    </h1>
+    <div class="grid lg:grid-cols-2 gap-10 mt-12 items-end">
+      <p class="text-lg text-white/85 leading-relaxed max-w-xl">
+        I'm <strong class="text-white">Leon</strong>, a Dongguan-based interpreter and sourcing agent
+        with hands-on factory floor experience — not just someone who memorizes phrasebooks.
+        I offer English-to-Mandarin interpretation for trade shows, factory tours and supplier
+        negotiations. <strong class="text-white">Transparent published rates, written quote delivered within 12 hours.</strong>
+      </p>
+      <div>
+        <p class="text-sm font-semibold mb-2"><span class="text-accent">★★★★★</span> <span class="text-white/90">4.8/5 · 95 client reviews</span></p>
+        <div class="flex gap-3">
+          <a href="#quote" class="open-modal bg-accent text-white px-7 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition" data-modal="quoteModal">Get Your Quote</a>
+          <a href="#rates" class="border border-white/30 text-white px-7 py-3 rounded-full font-semibold text-sm hover:border-accent hover:text-accent transition">See Rates</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ TIMELINE NARRATIVE ══════════ -->
+<section class="px-5 py-20 border-t border-line">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-serif text-3xl sm:text-5xl font-medium mb-16 text-center">Schedule for the Day</h2>
+    <div class="space-y-20">
+    <div class="grid md:grid-cols-2 gap-8 items-start reveal">
+      <p class="eyebrow text-accent">07:40 · Guangzhou · Day one</p>
+      <div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-medium">The day starts <em>before the fair opens.</em></h2>
+        <p class="text-muted mt-4 max-w-md">Hotel-lobby pickup, on time — with your booth list already studied before your flight landed.</p>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 items-start reveal">
+      <p class="eyebrow text-accent">10:15 · The trade-show floor</p>
+      <div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-medium">Booth by booth, <em>price by price.</em></h2>
+        <p class="text-muted mt-4 max-w-md">I qualify suppliers before you waste an afternoon on the wrong ones — and I catch what gets said off-stage, not just the sales pitch.</p>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 items-start reveal">
+      <p class="eyebrow text-accent">13:00 · The factory</p>
+      <div>
+        <h2 class="font-serif text-3xl sm:text-4xl font-medium">The booth is a promise. <em>The factory is the proof.</em></h2>
+        <p class="text-muted mt-4 max-w-md">Same-day drive to the production line. Line speed, materials and finish checked against your spec — before you sign anything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ RATES ══════════ -->
+<section id="rates" class="px-5 py-24 border-t border-line bg-white">
+  <div class="max-w-6xl mx-auto">
+    <p class="eyebrow text-muted mb-4">Rates, published, all-in USD</p>
+    <h2 class="font-serif text-3xl sm:text-5xl font-medium max-w-2xl">The first question everyone asks, <em>answered first.</em></h2>
+    <p class="text-muted mt-4 max-w-xl">Every rate includes city travel and a written summary of each day. No hourly creep. No surprise "translation fees."</p>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-14">
+      <!-- Card 1 -->
+      <div class="border border-line rounded-2xl p-8 flex flex-col reveal">
+        <h3 class="font-serif text-xl font-semibold">Half day</h3>
+        <p class="text-sm text-muted mt-2">One supplier meeting or a short factory visit · up to 4 hrs</p>
+        <p class="font-serif text-3xl font-semibold mt-6">$80–140<span class="text-sm text-muted font-normal"> /half-day</span></p>
+        <ul class="text-sm text-muted space-y-2 mt-6 flex-1">
+          <li class="flex gap-2"><span class="text-accent">✓</span> City travel included</li>
+          <li class="flex gap-2"><span class="text-accent">✓</span> Written summary same evening</li>
+          <li class="flex gap-2"><span class="text-accent">✓</span> Pre-meeting product brief</li>
+        </ul>
+        <a href="#quote" class="mt-8 text-sm font-semibold border border-ink/20 rounded-full py-3 text-center hover:border-accent hover:text-accent transition">Get your exact quote</a>
+      </div>
+      <!-- Card 2 (most booked) -->
+      <div class="border-2 border-ink rounded-2xl p-8 flex flex-col relative bg-cream reveal">
+        <span class="absolute -top-3 left-8 bg-accent text-white text-xs font-semibold px-3 py-1 rounded-full">Most booked</span>
+        <h3 class="font-serif text-xl font-semibold">Full sourcing day</h3>
+        <p class="text-sm text-muted mt-2">Trade shows, factory visits, negotiations</p>
+        <p class="font-serif text-3xl font-semibold mt-6">$99–250<span class="text-sm text-muted font-normal"> /day</span></p>
+        <ul class="text-sm text-muted space-y-2 mt-6 flex-1">
+          <li class="flex gap-2"><span class="text-accent">✓</span> Hotel-lobby pickup, on time</li>
+          <li class="flex gap-2"><span class="text-accent">✓</span> Suppliers pre-screened before you land</li>
+          <li class="flex gap-2"><span class="text-accent">✓</span> Daily written record of agreements</li>
+        </ul>
+        <a href="#quote" class="mt-8 text-sm font-semibold bg-ink text-cream rounded-full py-3 text-center hover:bg-accent transition">Get your exact quote</a>
+      </div>
+      <!-- Card 3 -->
+      <div class="border border-line rounded-2xl p-8 flex flex-col reveal">
+        <h3 class="font-serif text-xl font-semibold">Trade-fair week</h3>
+        <p class="text-sm text-muted mt-2">Full Canton Fair coverage, start to finish</p>
+        <p class="font-serif text-3xl font-semibold mt-6">$800–1,250<span class="text-sm text-muted font-normal"> /week</span></p>
+        <ul class="text-sm text-muted space-y-2 mt-6 flex-1">
+          <li class="flex gap-2"><span class="text-accent">✓</span> Multi-day discount, roughly $130–210 a day</li>
+          <li class="flex gap-2"><span class="text-accent">✓</span> Post-fair supplier follow-up calls</li>
+          <li class="flex gap-2"><span class="text-accent">✓</span> Priority booking next season</li>
+        </ul>
+        <a href="#quote" class="mt-8 text-sm font-semibold border border-ink/20 rounded-full py-3 text-center hover:border-accent hover:text-accent transition">Get your exact quote</a>
+      </div>
+    </div>
+
+    <div class="mt-10 text-sm text-muted max-w-2xl">
+      <p class="font-semibold text-ink mb-2">What shapes your quote</p>
+      <p>City · number of days · half or full day · technical complexity · out-of-city travel. These are starting ranges — every job is quoted to your itinerary. Written quote within 12 hours. A 30% deposit confirms the booking; balance after the work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SERVICES ══════════ -->
+<section id="services" class="px-5 py-24 border-t border-line">
+  <div class="max-w-6xl mx-auto">
+    <p class="eyebrow text-muted mb-4">Services</p>
+    <h2 class="font-serif text-3xl sm:text-5xl font-medium max-w-2xl">Six ways I earn <em>my day rate.</em></h2>
+    <p class="text-muted mt-4 max-w-xl">From the trade-show floor to the factory gate — interpreting, sourcing and quality control, all in your language.</p>
+
+    <div class="grid md:grid-cols-2 gap-x-16 gap-y-12 mt-16">
+      <div class="reveal border-t border-ink pt-6">
+        <span class="font-serif text-muted">01</span>
+        <h3 class="font-serif text-2xl font-semibold mt-2">Trade-show interpreting</h3>
+        <p class="text-muted text-sm mt-3 leading-relaxed">Canton Fair, Yiwu market and beyond. I shortlist the right booths before you arrive and flag what a supplier tells his colleague — not just what he tells you.</p>
+        <p class="text-sm font-semibold mt-4">$99–250 / day</p>
+      </div>
+      <div class="reveal border-t border-ink pt-6">
+        <span class="font-serif text-muted">02</span>
+        <h3 class="font-serif text-2xl font-semibold mt-2">Escort &amp; business interpreting</h3>
+        <p class="text-muted text-sm mt-3 leading-relaxed">Meetings, negotiations and client dinners. Consecutive interpreting at your side, with cultural context explained so nothing gets lost between the lines.</p>
+        <p class="text-sm font-semibold mt-4">$99–250 / day</p>
+      </div>
+      <div class="reveal border-t border-ink pt-6">
+        <span class="font-serif text-muted">03</span>
+        <h3 class="font-serif text-2xl font-semibold mt-2">Factory visits &amp; audits</h3>
+        <p class="text-muted text-sm mt-3 leading-relaxed">Production-line walkthroughs and supplier negotiations, documented against your spec — line speed, materials, tooling and finish.</p>
+        <p class="text-sm font-semibold mt-4">$99–250 / day</p>
+      </div>
+      <div class="reveal border-t border-ink pt-6">
+        <span class="font-serif text-muted">04</span>
+        <h3 class="font-serif text-2xl font-semibold mt-2">Purchasing agent &amp; sourcing</h3>
+        <p class="text-muted text-sm mt-3 leading-relaxed">I locate and vet suppliers before you commit — the real factory, not a middleman; the real price, not the "foreigner price."</p>
+        <p class="text-sm font-semibold mt-4">from $250 / project</p>
+      </div>
+      <div class="reveal border-t border-ink pt-6">
+        <span class="font-serif text-muted">05</span>
+        <h3 class="font-serif text-2xl font-semibold mt-2">Quality inspection</h3>
+        <p class="text-muted text-sm mt-3 leading-relaxed">Can't fly out? I walk the floor for you and check facilities, lines and finished goods — photos and notes you can act on from abroad.</p>
+        <p class="text-sm font-semibold mt-4">from $200 / visit</p>
+      </div>
+      <div class="reveal border-t border-ink pt-6">
+        <span class="font-serif text-muted">06</span>
+        <h3 class="font-serif text-2xl font-semibold mt-2">Sample buying &amp; proxy purchase</h3>
+        <p class="text-muted text-sm mt-3 leading-relaxed">Taobao and 1688 have no English checkout and won't ship overseas. I buy, consolidate and forward, so a sample order is never a dead end.</p>
+        <p class="text-sm font-semibold mt-4">from $80 / order</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ OPERATOR'S NOTE ══════════ -->
+<section class="px-5 py-24 bg-ink text-cream">
+  <div class="max-w-4xl mx-auto text-center reveal">
+    <p class="eyebrow text-cream/50 mb-8">Operator's note</p>
+    <div class="font-serif text-xl sm:text-2xl leading-snug font-medium text-left max-w-2xl mx-auto space-y-5">
+      <p>I'm Leon. I provide English-to-Mandarin interpretation services backed by hands-on foreign trade experience. I'm familiar with a wide range of industries, including 3C products, apparel, LED lighting, AI &amp; robotics, building materials, wigs, silicone goods, homeware, gifts and furniture.</p>
+      <p>Beyond business support, I can also help you plan your trip across China from a local perspective. I'm able to create detailed travel itineraries and show you around during your stay.</p>
+    </div>
+    <div class="mt-8 flex items-center justify-center gap-4">
+      <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center font-serif text-lg font-semibold">刘</div>
+      <div class="text-left">
+        <p class="font-semibold text-sm">Leon Lau</p>
+        <p class="text-xs text-cream/60">Founder &amp; Interpreter · Based in Guangdong</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ HOW BOOKING WORKS ══════════ -->
+<section class="px-5 py-24 border-t border-line">
+  <div class="max-w-6xl mx-auto">
+    <p class="eyebrow text-muted mb-4">How booking works</p>
+    <h2 class="font-serif text-3xl sm:text-5xl font-medium max-w-2xl">From first message <em>to factory floor.</em></h2>
+    <div class="grid md:grid-cols-4 gap-8 mt-16">
+      <div class="reveal">
+        <p class="eyebrow text-accent mb-3">T+0</p>
+        <h3 class="font-serif text-lg font-semibold">Send your dates</h3>
+        <p class="text-sm text-muted mt-2">WhatsApp, WeChat or the form below. Tell me your cities, dates and what you're buying.</p>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow text-accent mb-3">T+12 hrs</p>
+        <h3 class="font-serif text-lg font-semibold">Fixed quote</h3>
+        <p class="text-sm text-muted mt-2">A written quote in USD within 12 hours. A 30% deposit locks your dates.</p>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow text-accent mb-3">Before arrival</p>
+        <h3 class="font-serif text-lg font-semibold">I prepare</h3>
+        <p class="text-sm text-muted mt-2">Product list studied, venue mapped, suppliers pre-screened before your flight lands.</p>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow text-accent mb-3">Your trip</p>
+        <h3 class="font-serif text-lg font-semibold">On the ground</h3>
+        <p class="text-sm text-muted mt-2">Hotel-lobby pickup each morning, a written summary of everything agreed each evening.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ WORK LOG ══════════ -->
+<section id="worklog" class="px-5 py-24 border-t border-line bg-white">
+  <div class="max-w-6xl mx-auto">
+    <p class="eyebrow text-muted mb-4">Work log · real venues, real dates</p>
+    <h2 class="font-serif text-3xl sm:text-5xl font-medium max-w-2xl">No stock photos. <em>My actual jobs.</em></h2>
+    <p class="text-muted mt-4 max-w-xl">Every entry below comes from my own working record — venue and date exactly as they happened.</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+      <div class="reveal">
+        <div class="aspect-[4/3] rounded-xl overflow-hidden"><img src="work1.jpg" alt="Exhibition hall interpretation" class="w-full h-full object-cover" loading="lazy" /></div>
+        <p class="eyebrow text-muted mt-4">Dongguan · Tech Exhibition Hall</p>
+        <h3 class="font-serif text-lg font-semibold mt-1">Exhibition Hall Interpretation</h3>
+      </div>
+      <div class="reveal">
+        <div class="aspect-[4/3] rounded-xl overflow-hidden"><img src="work2.png" alt="China Hair Expo interpretation" class="w-full h-full object-cover" loading="lazy" /></div>
+        <p class="eyebrow text-muted mt-4">Guangzhou · The 16th China Hair Expo</p>
+        <h3 class="font-serif text-lg font-semibold mt-1">Trade Fair Interpreter</h3>
+      </div>
+      <div class="reveal">
+        <div class="aspect-[4/3] rounded-xl overflow-hidden"><img src="work3.png" alt="ASEAN welcome banquet interpretation" class="w-full h-full object-cover" loading="lazy" /></div>
+        <p class="eyebrow text-muted mt-4">Dongguan · ASEAN Cooperation Day Banquet</p>
+        <h3 class="font-serif text-lg font-semibold mt-1">Conference & Banquet Interpretation</h3>
+      </div>
+      <div class="reveal">
+        <div class="aspect-[4/3] rounded-xl overflow-hidden"><img src="work4.png" alt="BEYOND Expo interpretation" class="w-full h-full object-cover" loading="lazy" /></div>
+        <p class="eyebrow text-muted mt-4">Macao · BEYOND Expo</p>
+        <h3 class="font-serif text-lg font-semibold mt-1">Tech Expo Interpreter</h3>
+      </div>
+      <div class="reveal">
+        <div class="aspect-[4/3] rounded-xl overflow-hidden"><img src="work5.png" alt="Interpretation work" class="w-full h-full object-cover" loading="lazy" /></div>
+        <p class="eyebrow text-muted mt-4">On-site interpretation</p>
+        <h3 class="font-serif text-lg font-semibold mt-1">Business Interpretation</h3>
+      </div>
+      <div class="reveal">
+        <div class="aspect-[4/3] rounded-xl overflow-hidden"><img src="work6.jpg" alt="Factory visit interpretation" class="w-full h-full object-cover" loading="lazy" /></div>
+        <p class="eyebrow text-muted mt-4">Factory visit</p>
+        <h3 class="font-serif text-lg font-semibold mt-1">Factory Translator</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STATS + ABOUT ══════════ -->
+<section class="px-5 py-24 border-t border-line">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+    <div class="reveal">
+      <p class="eyebrow text-muted mb-4">The person you're booking</p>
+      <h2 class="font-serif text-3xl sm:text-4xl font-medium">Meet <em>Leon.</em></h2>
+      <p class="text-muted mt-6 leading-relaxed">I'm <strong class="text-ink">Leon Lau</strong>, a Dongguan-based interpreter and sourcing agent with hands-on foreign trade experience. I'm familiar with a wide range of industries — 3C products, apparel, LED lighting, AI &amp; robotics, building materials, wigs, silicone goods, homeware, gifts and furniture.</p>
+      <p class="text-muted mt-4 leading-relaxed">Beyond business support, I help clients plan their trip across China from a local perspective — detailed itineraries, factory visits, and showing you around during your stay.</p>
+    </div>
+    <div class="grid grid-cols-3 gap-6 reveal">
+      <div class="border-t-2 border-ink pt-4">
+        <p class="font-serif text-4xl font-semibold">95</p>
+        <p class="text-sm text-muted mt-1">client reviews</p>
+      </div>
+      <div class="border-t-2 border-ink pt-4">
+        <p class="font-serif text-4xl font-semibold">4.8<span class="text-lg text-muted">/5</span></p>
+        <p class="text-sm text-muted mt-1">average rating</p>
+      </div>
+      <div class="border-t-2 border-ink pt-4">
+        <p class="font-serif text-4xl font-semibold">26+</p>
+        <p class="text-sm text-muted mt-1">cities covered</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ COVERAGE / CITIES ══════════ -->
+<section class="px-5 py-24 border-t border-line bg-cream">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="eyebrow text-muted mb-4">Coverage</p>
+      <h2 class="font-serif text-3xl sm:text-5xl font-medium">Based in Dongguan, booked <em>everywhere.</em></h2>
+      <p class="text-muted mt-5 max-w-2xl mx-auto">An English–Mandarin interpreter wherever your supply chain takes you. Pick a city below — I've booked it, worked it, or can travel there at short notice.</p>
+    </div>
+
+    <div id="cityNetwork" class="relative grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-4 gap-y-10 reveal">
+      <svg id="cityLines" class="absolute inset-0 w-full h-full pointer-events-none" style="z-index:0;"></svg>
+
+      <!-- 圆盘城市卡片 -->
+      <div class="city-node flex flex-col items-center text-center group relative" style="z-index:1;">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">东莞</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Dongguan</p>
+        <p class="text-xs text-muted">Home base</p>
+      </div>
+
+      <div class="city-node flex flex-col items-center text-center group relative" style="z-index:1;">
+        <div class="city-dot w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">广州</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Guangzhou</p>
+        <p class="text-xs text-muted">Canton Fair</p>
+      </div>
+
+      <div class="city-node flex flex-col items-center text-center group relative" style="z-index:1;">
+        <div class="city-dot w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">深圳</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Shenzhen</p>
+        <p class="text-xs text-muted">3C / Tech</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">佛山</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Foshan</p>
+        <p class="text-xs text-muted">Ceramics / Home</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">中山</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Zhongshan</p>
+        <p class="text-xs text-muted">LED / Lighting</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">珠海</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Zhuhai</p>
+        <p class="text-xs text-muted">Electronics</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">香港</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Hong Kong</p>
+        <p class="text-xs text-muted">Trade hub</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">惠州</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Huizhou</p>
+        <p class="text-xs text-muted">Electronics</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">潮汕</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Chaozhou</p>
+        <p class="text-xs text-muted">Ceramics</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">上海</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Shanghai</p>
+        <p class="text-xs text-muted">Trade hub</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">北京</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Beijing</p>
+        <p class="text-xs text-muted">Trade / Tech</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">义乌</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Yiwu</p>
+        <p class="text-xs text-muted">Small goods</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">重庆</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Chongqing</p>
+        <p class="text-xs text-muted">Tourism</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">成都</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Chengdu</p>
+        <p class="text-xs text-muted">Tourism</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">宁波</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Ningbo</p>
+        <p class="text-xs text-muted">Port city</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">杭州</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Hangzhou</p>
+        <p class="text-xs text-muted">E-commerce</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">南京</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Nanjing</p>
+        <p class="text-xs text-muted">Tech / Auto</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">西安</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Xi'an</p>
+        <p class="text-xs text-muted">Tourism</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">哈尔滨</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Harbin</p>
+        <p class="text-xs text-muted">Tourism</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">桂林</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Guilin</p>
+        <p class="text-xs text-muted">Tourism</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">丽江</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Lijiang</p>
+        <p class="text-xs text-muted">Tourism</p>
+      </div>
+
+      <div class="flex flex-col items-center text-center group">
+        <div class="w-20 h-20 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-sm group-hover:border-accent group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+          <span class="font-serif text-lg font-semibold text-ink group-hover:text-accent transition-colors">三亚</span>
+        </div>
+        <p class="mt-3 text-sm font-medium text-ink">Sanya</p>
+        <p class="text-xs text-muted">Tourism</p>
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+    <p class="text-center text-sm text-muted mt-12">Can't see your city? I travel nationwide — send your itinerary and I'll confirm availability.</p>
+  </div>
+</section>
+
+<!-- ══════════ REVIEWS ══════════ -->
+<section class="px-5 py-24 border-t border-line bg-white">
+  <div class="max-w-6xl mx-auto">
+    <p class="eyebrow text-muted mb-4">Client reviews</p>
+    <h2 class="font-serif text-3xl sm:text-5xl font-medium max-w-2xl">What buyers say once <em>the deal is done.</em></h2>
+    <p class="text-sm font-semibold mt-4"><span class="text-accent">★★★★★</span> 4.8/5 · 95 client reviews · clients from every continent</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+      <div class="border border-line rounded-2xl p-7 reveal">
+        <p class="text-accent">★★★★★</p>
+        <p class="text-sm text-muted mt-4 leading-relaxed">"She walked the fair with me for four days and qualified booths before I wasted an afternoon on them. I flew home with two suppliers I'd have walked straight past on my own."</p>
+        <div class="flex items-center gap-3 mt-6">
+          <div class="w-9 h-9 rounded-full bg-ink text-cream text-xs font-semibold flex items-center justify-center">JR</div>
+          <div><p class="text-sm font-semibold">James R.</p><p class="text-xs text-muted">Homeware importer · UK · Canton Fair</p></div>
+        </div>
+      </div>
+      <div class="border border-line rounded-2xl p-7 reveal">
+        <p class="text-accent">★★★★★</p>
+        <p class="text-sm text-muted mt-4 leading-relaxed">"She caught what the factory owner said to his foreman — not the version he gave me. That one sentence saved me a 20% overpay on tooling."</p>
+        <div class="flex items-center gap-3 mt-6">
+          <div class="w-9 h-9 rounded-full bg-ink text-cream text-xs font-semibold flex items-center justify-center">DK</div>
+          <div><p class="text-sm font-semibold">Daniel K.</p><p class="text-xs text-muted">Hardware brand · US · Factory visit</p></div>
+        </div>
+      </div>
+      <div class="border border-line rounded-2xl p-7 reveal">
+        <p class="text-accent">★★★★★</p>
+        <p class="text-sm text-muted mt-4 leading-relaxed">"Every evening I had a written summary of what was agreed. When a supplier 'misremembered' the price three weeks later, I had it in writing."</p>
+        <div class="flex items-center gap-3 mt-6">
+          <div class="w-9 h-9 rounded-full bg-ink text-cream text-xs font-semibold flex items-center justify-center">TB</div>
+          <div><p class="text-sm font-semibold">Thomas B.</p><p class="text-xs text-muted">Furniture wholesaler · Germany</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section id="faq" class="px-5 py-24 border-t border-line">
+  <div class="max-w-3xl mx-auto">
+    <p class="eyebrow text-muted mb-4">FAQ</p>
+    <h2 class="font-serif text-3xl sm:text-5xl font-medium">The questions you'd ask <em>anyway.</em></h2>
+    <div class="mt-12 divide-y divide-line border-y border-line">
+      <details class="group py-5 reveal">
+        <summary class="flex items-center justify-between cursor-pointer font-serif text-lg font-semibold list-none">Are you an agency or one interpreter?<i class="fas fa-plus faq-plus text-accent text-sm"></i></summary>
+        <p class="text-sm text-muted mt-4 leading-relaxed">One interpreter. When you book me, I'm the one on the floor — no rotating roster, no quiet subcontracting. The honest trade-off: I can only be in one place at a time, so popular dates go early.</p>
+      </details>
+      <details class="group py-5 reveal">
+        <summary class="flex items-center justify-between cursor-pointer font-serif text-lg font-semibold list-none">What does a day actually cost?<i class="fas fa-plus faq-plus text-accent text-sm"></i></summary>
+        <p class="text-sm text-muted mt-4 leading-relaxed">Half day $80–140, full sourcing day $99–250, trade-fair week $800–1,250. City travel and a written daily summary are always included. Exact figures depend on city, days and technical complexity.</p>
+      </details>
+      <details class="group py-5 reveal">
+        <summary class="flex items-center justify-between cursor-pointer font-serif text-lg font-semibold list-none">What happens after I send my dates?<i class="fas fa-plus faq-plus text-accent text-sm"></i></summary>
+        <p class="text-sm text-muted mt-4 leading-relaxed">A written quote in USD within 12 hours — not a "let's hop on a call" reply. A 30% deposit locks the dates; the balance is due after the work.</p>
+      </details>
+      <details class="group py-5 reveal">
+        <summary class="flex items-center justify-between cursor-pointer font-serif text-lg font-semibold list-none">What if you're already booked?<i class="fas fa-plus faq-plus text-accent text-sm"></i></summary>
+        <p class="text-sm text-muted mt-4 leading-relaxed">I'll tell you within the same 12-hour window and recommend a specific interpreter I personally trust, with their direct contact.</p>
+      </details>
+      <details class="group py-5 reveal">
+        <summary class="flex items-center justify-between cursor-pointer font-serif text-lg font-semibold list-none">How far ahead should I book?<i class="fas fa-plus faq-plus text-accent text-sm"></i></summary>
+        <p class="text-sm text-muted mt-4 leading-relaxed">Two weeks is comfortable for most cities. For Canton Fair weeks and other major fairs, book 4–6 weeks out — those dates go first every season.</p>
+      </details>
+      <details class="group py-5 reveal">
+        <summary class="flex items-center justify-between cursor-pointer font-serif text-lg font-semibold list-none">How do payments work?<i class="fas fa-plus faq-plus text-accent text-sm"></i></summary>
+        <p class="text-sm text-muted mt-4 leading-relaxed">30% deposit to confirm, balance after the work. Wire transfer, Wise, PayPal, or Alipay/WeChat for smaller engagements. All quotes in writing, in USD.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FINAL CTA ══════════ -->
+<section id="quote" class="px-5 py-28 text-white" style="background: linear-gradient(135deg, #f97316 0%, #fb923c 40%, #fef3c7 100%);">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <p class="eyebrow text-white/60 mb-6">Next step</p>
+    <h2 class="font-serif text-4xl sm:text-6xl font-medium leading-tight">Your dates. My quote.<br /><em>Twelve hours.</em></h2>
+    <p class="text-white/80 mt-6 max-w-lg mx-auto">Send your cities, dates and product list. You'll get a fixed written quote — no obligation, no deposit to ask.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+      <a href="mailto:you@example.com" class="bg-white text-accent px-8 py-3.5 rounded-full font-semibold hover:bg-cream transition"><i class="fas fa-envelope mr-2"></i>you@example.com</a>
+      <a href="#" class="border border-white/40 px-8 py-3.5 rounded-full font-semibold hover:bg-white/10 transition"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+      <a href="#" class="open-modal bg-white text-accent px-8 py-3.5 rounded-full font-semibold hover:bg-cream transition" data-modal="wechatModal"><i class="fab fa-weixin mr-2"></i>WeChat</a>
+      <a href="#quote-form" class="open-modal border border-white/40 px-8 py-3.5 rounded-full font-semibold hover:bg-white/10 transition" data-modal="quoteModal"><i class="fas fa-file-alt mr-2"></i>Quote Form</a>
+    </div>
+    <p class="text-xs text-white/60 mt-8">Based in China · Available nationwide · UTC+8</p>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="px-5 py-10 border-t border-line">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
+    <p class="font-serif font-semibold text-ink">Leon Lau <span class="text-muted font-normal">刘立恩</span></p>
+    <p>© <span id="year"></span> · English–Chinese interpreter &amp; sourcing agent</p>
+    <div class="flex items-center gap-4">
+      <a href="https://www.facebook.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-ink text-cream flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-facebook-f text-sm"></i></a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-ink text-cream flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-instagram text-sm"></i></a>
+      <a href="https://www.tiktok.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-ink text-cream flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-tiktok text-sm"></i></a>
+    </div>
+    <div class="flex gap-6">
+      <a href="#services" class="hover:text-accent">Services</a>
+      <a href="#rates" class="hover:text-accent">Rates</a>
+      <a href="#faq" class="hover:text-accent">FAQ</a>
+      <a href="#quote" class="hover:text-accent">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ QUOTE MODAL ══════════ -->
+<div id="quoteModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-ink/60 backdrop-blur-sm">
+  <div class="bg-cream rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden relative flex flex-col md:flex-row">
+    <button id="closeModal" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-cream/80 hover:bg-cream text-ink flex items-center justify-center transition"><i class="fas fa-times"></i></button>
+    <div class="md:w-2/5 bg-ink text-cream p-8 flex flex-col justify-end relative min-h-[200px] md:min-h-0">
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent"></div>
+      <div class="relative">
+        <div class="w-20 h-20 rounded-full bg-accent flex items-center justify-center font-serif text-2xl font-semibold mb-4">刘</div>
+        <p class="font-serif text-xl font-semibold">Leon Lau</p>
+        <p class="text-sm text-cream/60">Founder &amp; Interpreter · Based in Guangdong</p>
+        <p class="text-sm mt-3"><span class="text-accent">★★★★★</span> 4.8/5 · 95 client reviews</p>
+        <p class="text-xs text-cream/60 mt-3">You're messaging me directly, not a call centre. I usually reply within 12 hours.</p>
+      </div>
+    </div>
+    <div class="md:w-3/5 p-8 text-sm">
+      <p class="eyebrow text-accent mb-2">Free quote · No obligation</p>
+      <h3 class="font-serif text-2xl font-medium">Tell me what you need</h3>
+      <p class="text-muted mt-1.5 mb-5">Share your dates and a few details, and I'll get you a quote.</p>
+      <form id="quoteForm" class="space-y-3">
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-semibold text-muted mb-1">YOUR NAME</label>
+            <input type="text" required class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition" placeholder="Your name" />
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-muted mb-1">EMAIL</label>
+            <input type="email" required class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition" placeholder="you@email.com" />
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-semibold text-muted mb-1">PHONE / WHATSAPP</label>
+            <input type="tel" class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition" placeholder="+86 ..." />
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-muted mb-1">WHAT DO YOU NEED?</label>
+            <select class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition">
+              <option>Trade-show interpreting</option>
+              <option>Factory visit</option>
+              <option>Escort interpretation</option>
+              <option>Sourcing &amp; Inspection</option>
+              <option>Private tour</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-[11px] font-semibold text-muted mb-1">MESSAGE <span class="text-muted/50">(optional)</span></label>
+          <textarea rows="4" class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition resize-y" placeholder="Dates, city, and what you need..."></textarea>
+        </div>
+        <button type="submit" class="w-full bg-accent text-white py-3 rounded-full font-semibold text-sm hover:opacity-90 transition">Get my quote →</button>
+        <p class="text-xs text-center text-muted mt-2"><i class="fas fa-lock mr-1"></i>Your enquiry comes straight to my inbox, not a mailing list.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ WECHAT MODAL ══════════ -->
+<div id="wechatModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-ink/60 backdrop-blur-sm">
+  <div class="bg-cream rounded-2xl shadow-2xl w-full max-w-sm p-7 text-center relative">
+    <button class="close-wechat absolute top-4 right-4 w-9 h-9 rounded-full bg-cream hover:bg-line text-ink flex items-center justify-center transition"><i class="fas fa-times"></i></button>
+    <h3 class="font-serif text-2xl font-medium mb-1"><i class="fab fa-weixin text-accent mr-2"></i>Add on WeChat</h3>
+    <p class="text-xs text-muted mb-6">Scan to connect with me directly</p>
+    <div class="w-56 h-56 mx-auto bg-white rounded-xl border border-line flex items-center justify-center overflow-hidden">
+      <img src="wechat-qr.jpg" alt="WeChat QR Code" class="w-full h-full object-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+      <div class="hidden w-full h-full flex-col items-center justify-center text-muted">
+        <i class="fas fa-qrcode text-4xl mb-2"></i>
+        <p class="text-xs">Replace with your<br/>wechat-qr.png</p>
+      </div>
+    </div>
+    <p class="text-sm text-muted mt-5 leading-relaxed">Open WeChat, tap <strong>+</strong> then <strong>Scan</strong>. On a phone, long-press the code to save it and use <strong>Scan from album</strong>.</p>
+    <div class="flex items-center gap-2 mt-5 px-4 py-2.5 bg-white border border-line rounded-lg">
+      <span class="text-xs font-semibold text-muted">WECHAT ID</span>
+      <span class="flex-1 text-center font-mono text-sm font-semibold text-ink" id="wechatId">LYL-ll11</span>
+      <button id="copyWechat" class="text-accent hover:opacity-70 transition" title="Copy"><i class="far fa-copy"></i></button>
+    </div>
+    <p class="text-xs text-muted mt-4">On desktop? Search this ID in WeChat to add me.</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // Hero rotating words
+  const words = ['for trade shows.', 'for factory visits.', 'for product sourcing.', 'for quality inspections.', 'for business negotiations.', 'for anything else.'];
+  const rot = document.getElementById('rotator');
+  let wi = 0;
+  setInterval(() => {
+    wi = (wi + 1) % words.length;
+    rot.style.opacity = 0;
+    setTimeout(() => { rot.textContent = words[wi]; rot.style.opacity = 1; }, 200);
+  }, 2600);
+  rot.style.transition = 'opacity .2s ease';
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // City network lines
+  function drawCityNetwork() {
+    const container = document.getElementById('cityNetwork');
+    const svg = document.getElementById('cityLines');
+    if (!container || !svg) return;
+    const rect = container.getBoundingClientRect();
+    svg.setAttribute('width', rect.width);
+    svg.setAttribute('height', rect.height);
+    svg.innerHTML = '';
+
+    const nodes = container.querySelectorAll(':scope > div.city-node, :scope > div:not(#cityLines)');
+    const centers = [];
+    nodes.forEach((node, i) => {
+      const dot = node.querySelector('div:first-child');
+      if (!dot) return;
+      const dotRect = dot.getBoundingClientRect();
+      centers.push({
+        x: dotRect.left - rect.left + dotRect.width / 2,
+        y: dotRect.top - rect.top + dotRect.height / 2,
+        i
+      });
+    });
+
+    // Center = Dongguan (first node). Connect to all others + some mesh links
+    const cx = centers[0].x, cy = centers[0].y;
+    centers.forEach((c, i) => {
+      if (i === 0) return;
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', cx); line.setAttribute('y1', cy);
+      line.setAttribute('x2', c.x); line.setAttribute('y2', c.y);
+      line.setAttribute('stroke', 'rgba(234,88,12,0.25)');
+      line.setAttribute('stroke-width', '1');
+      svg.appendChild(line);
+      // Flowing dot along this line
+      const mid = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      mid.setAttribute('r', '2.5');
+      mid.setAttribute('fill', '#ea580c');
+      mid.setAttribute('opacity', '0.8');
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', `M ${cx} ${cy} L ${c.x} ${c.y}`);
+      path.setAttribute('fill', 'none');
+      mid.style.offsetPath = `path('M ${cx} ${cy} L ${c.x} ${c.y}')`;
+      mid.classList.add('flow-dot');
+      mid.style.animationDelay = (i * 0.15) + 's';
+      svg.appendChild(mid);
+    });
+
+    // Extra mesh links between nearby hubs for network feel
+    const hubs = [1, 2, 9, 10, 13]; // Guangzhou, Shenzhen, Shanghai, Beijing, Chengdu
+    for (let a = 0; a < hubs.length; a++) {
+      for (let b = a + 1; b < hubs.length; b++) {
+        const A = centers[hubs[a]], B = centers[hubs[b]];
+        if (!A || !B) continue;
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', A.x); line.setAttribute('y1', A.y);
+        line.setAttribute('x2', B.x); line.setAttribute('y2', B.y);
+        line.setAttribute('stroke', 'rgba(59,130,246,0.15)');
+        line.setAttribute('stroke-width', '1');
+        line.setAttribute('stroke-dasharray', '3 6');
+        svg.appendChild(line);
+      }
+    }
+  }
+  window.addEventListener('load', drawCityNetwork);
+  window.addEventListener('resize', drawCityNetwork);
+
+  // Quote modal
+  const modal = document.getElementById('quoteModal');
+  const openBtns = document.querySelectorAll('.open-modal');
+  const closeBtn = document.getElementById('closeModal');
+  const form = document.getElementById('quoteForm');
+
+  function openModal() {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  openBtns.forEach(b => b.addEventListener('click', e => { e.preventDefault(); openModal(); }));
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Thanks! Your enquiry has been sent. I will reply within 12 hours.');
+    form.reset();
+    closeModal();
+  });
+
+  // WeChat modal
+  const wechatModal = document.getElementById('wechatModal');
+  const closeWechat = document.querySelector('.close-wechat');
+  const copyBtn = document.getElementById('copyWechat');
+  const wechatIdEl = document.getElementById('wechatId');
+  function openWechat() { wechatModal.classList.remove('hidden'); wechatModal.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+  function closeWechatModal() { wechatModal.classList.add('hidden'); wechatModal.classList.remove('flex'); document.body.style.overflow = ''; }
+  // Bind only to buttons with data-modal="wechatModal"
+  openBtns.forEach(b => { if (b.dataset.modal === 'wechatModal') b.addEventListener('click', e => { e.preventDefault(); openWechat(); }); });
+  if (closeWechat) closeWechat.addEventListener('click', closeWechatModal);
+  wechatModal.addEventListener('click', e => { if (e.target === wechatModal) closeWechatModal(); });
+  if (copyBtn) copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(wechatIdEl.textContent).then(() => {
+      const original = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+      setTimeout(() => { copyBtn.innerHTML = original; }, 1500);
+    });
+  });
+</script>
+</body>
+</html>
