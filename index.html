@@ -79,7 +79,7 @@ tailwind.config = {
 <!-- ══════════ NAV ══════════ -->
 <nav class="fixed top-0 inset-x-0 z-50 bg-cream/90 backdrop-blur border-b border-line">
   <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-    <a href="#top" class="font-serif text-lg font-semibold">Leon Lau <span class="text-muted font-normal">刘</span></a>
+    <a href="#top" class="font-serif text-lg font-semibold">Leonbridge Interpreting</a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium">
       <a href="#services" class="hover:text-accent transition-colors">Services</a>
       <a href="#rates" class="hover:text-accent transition-colors">Rates</a>
@@ -259,24 +259,6 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ══════════ OPERATOR'S NOTE ══════════ -->
-<section class="px-5 py-24 bg-ink text-cream">
-  <div class="max-w-4xl mx-auto text-center reveal">
-    <p class="eyebrow text-cream/50 mb-8">Operator's note</p>
-    <div class="font-serif text-xl sm:text-2xl leading-snug font-medium text-left max-w-2xl mx-auto space-y-5">
-      <p>I'm Leon. I provide English-to-Mandarin interpretation services backed by hands-on foreign trade experience. I'm familiar with a wide range of industries, including 3C products, apparel, LED lighting, AI &amp; robotics, building materials, wigs, silicone goods, homeware, gifts and furniture.</p>
-      <p>Beyond business support, I can also help you plan your trip across China from a local perspective. I'm able to create detailed travel itineraries and show you around during your stay.</p>
-    </div>
-    <div class="mt-8 flex items-center justify-center gap-4">
-      <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center font-serif text-lg font-semibold">刘</div>
-      <div class="text-left">
-        <p class="font-semibold text-sm">Leon Lau</p>
-        <p class="text-xs text-cream/60">Founder &amp; Interpreter · Based in Guangdong</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ══════════ HOW BOOKING WORKS ══════════ -->
 <section class="px-5 py-24 border-t border-line">
   <div class="max-w-6xl mx-auto">
@@ -350,25 +332,30 @@ tailwind.config = {
 
 <!-- ══════════ STATS + ABOUT ══════════ -->
 <section class="px-5 py-24 border-t border-line">
-  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-line bg-line">
+        <img src="leon-photo.png" alt="Leon Lau at trade show" class="w-full h-full object-cover" onerror="this.style.background='#e5e0d8';this.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-muted text-sm\'>Replace with leon-photo.png</div>'" />
+      </div>
+    </div>
     <div class="reveal">
       <p class="eyebrow text-muted mb-4">The person you're booking</p>
       <h2 class="font-serif text-3xl sm:text-4xl font-medium">Meet <em>Leon.</em></h2>
       <p class="text-muted mt-6 leading-relaxed">I'm <strong class="text-ink">Leon Lau</strong>, a Dongguan-based interpreter and sourcing agent with hands-on foreign trade experience. I'm familiar with a wide range of industries — 3C products, apparel, LED lighting, AI &amp; robotics, building materials, wigs, silicone goods, homeware, gifts and furniture.</p>
       <p class="text-muted mt-4 leading-relaxed">Beyond business support, I help clients plan their trip across China from a local perspective — detailed itineraries, factory visits, and showing you around during your stay.</p>
-    </div>
-    <div class="grid grid-cols-3 gap-6 reveal">
-      <div class="border-t-2 border-ink pt-4">
-        <p class="font-serif text-4xl font-semibold">95</p>
-        <p class="text-sm text-muted mt-1">client reviews</p>
-      </div>
-      <div class="border-t-2 border-ink pt-4">
-        <p class="font-serif text-4xl font-semibold">4.8<span class="text-lg text-muted">/5</span></p>
-        <p class="text-sm text-muted mt-1">average rating</p>
-      </div>
-      <div class="border-t-2 border-ink pt-4">
-        <p class="font-serif text-4xl font-semibold">26+</p>
-        <p class="text-sm text-muted mt-1">cities covered</p>
+      <div class="grid grid-cols-3 gap-6 mt-10">
+        <div class="border-t-2 border-ink pt-4">
+          <p class="font-serif text-4xl font-semibold">95</p>
+          <p class="text-sm text-muted mt-1">client reviews</p>
+        </div>
+        <div class="border-t-2 border-ink pt-4">
+          <p class="font-serif text-4xl font-semibold">4.8<span class="text-lg text-muted">/5</span></p>
+          <p class="text-sm text-muted mt-1">average rating</p>
+        </div>
+        <div class="border-t-2 border-ink pt-4">
+          <p class="font-serif text-4xl font-semibold">26+</p>
+          <p class="text-sm text-muted mt-1">cities covered</p>
+        </div>
       </div>
     </div>
   </div>
@@ -618,7 +605,7 @@ tailwind.config = {
     <div class="mt-12 divide-y divide-line border-y border-line">
       <details class="group py-5 reveal">
         <summary class="flex items-center justify-between cursor-pointer font-serif text-lg font-semibold list-none">Are you an agency or one interpreter?<i class="fas fa-plus faq-plus text-accent text-sm"></i></summary>
-        <p class="text-sm text-muted mt-4 leading-relaxed">One interpreter. When you book me, I'm the one on the floor — no rotating roster, no quiet subcontracting. The honest trade-off: I can only be in one place at a time, so popular dates go early.</p>
+        <p class="text-sm text-muted mt-4 leading-relaxed">One dedicated interpreter — that's me. When you book me, I'm the one standing on-site. I can only be in one place at a time, so popular dates fill up fast and early booking is recommended. If I'm already booked, I'll personally refer professional interpreters I trust, with their direct contact details.</p>
       </details>
       <details class="group py-5 reveal">
         <summary class="flex items-center justify-between cursor-pointer font-serif text-lg font-semibold list-none">What does a day actually cost?<i class="fas fa-plus faq-plus text-accent text-sm"></i></summary>
@@ -645,8 +632,9 @@ tailwind.config = {
 </section>
 
 <!-- ══════════ FINAL CTA ══════════ -->
-<section id="quote" class="px-5 py-28 text-white" style="background: linear-gradient(135deg, #f97316 0%, #fb923c 40%, #fef3c7 100%);">
-  <div class="max-w-3xl mx-auto text-center reveal">
+<section id="quote" class="px-5 py-28 text-white" style="background: linear-gradient(135deg, #2d2822 0%, #8b3a1a 40%, #f97316 100%);">
+  <div class="max-w-4xl mx-auto border-2 border-white/60 rounded-3xl py-16 px-6 reveal" style="box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 8px 32px rgba(0,0,0,0.3);">
+    <div class="text-center">
     <p class="eyebrow text-white/60 mb-6">Next step</p>
     <h2 class="font-serif text-4xl sm:text-6xl font-medium leading-tight">Your dates. My quote.<br /><em>Twelve hours.</em></h2>
     <p class="text-white/80 mt-6 max-w-lg mx-auto">Send your cities, dates and product list. You'll get a fixed written quote — no obligation, no deposit to ask.</p>
@@ -654,15 +642,16 @@ tailwind.config = {
       <a href="https://wa.me/8615820824676?text=Hi%20Leon%2C%20I%27m%20interested%20in%20your%20interpreter%20service." target="_blank" rel="noopener" class="border border-white/40 px-10 py-3.5 rounded-full font-semibold hover:bg-white/10 transition whitespace-nowrap"><i class="fab fa-whatsapp mr-2"></i>WhatsApp +86 15820824676</a>
       <a href="#" class="open-modal bg-white text-accent px-8 py-3.5 rounded-full font-semibold hover:bg-cream transition" data-modal="wechatModal"><i class="fab fa-weixin mr-2"></i>WeChat</a>
       <a href="#quote-form" class="open-modal border border-white/40 px-8 py-3.5 rounded-full font-semibold hover:bg-white/10 transition" data-modal="quoteModal"><i class="fas fa-file-alt mr-2"></i>Quote Form</a>
+      <a href="mailto:tonyglobaltrade1@gmail.com?subject=Quote%20Request%20-%20Interpreter%20Service" class="border border-white/40 px-8 py-3.5 rounded-full font-semibold hover:bg-white/10 transition whitespace-nowrap"><i class="fas fa-envelope mr-2"></i>Email</a>
     </div>
     <p class="text-xs text-white/60 mt-8">Based in China · Available nationwide · UTC+8</p>
+    </div>
   </div>
 </section>
 
 <!-- ══════════ FOOTER ══════════ -->
 <footer class="px-5 py-10 border-t border-line">
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
-    <p class="font-serif font-semibold text-ink">Leon Lau <span class="text-muted font-normal">刘立恩</span></p>
     <p>© <span id="year"></span> · English–Chinese interpreter &amp; sourcing agent</p>
     <div class="flex items-center gap-4">
       <a href="https://www.facebook.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-ink text-cream flex items-center justify-center hover:bg-accent transition-colors"><i class="fab fa-facebook-f text-sm"></i></a>
@@ -696,25 +685,25 @@ tailwind.config = {
       <p class="eyebrow text-accent mb-2">Free quote · No obligation</p>
       <h3 class="font-serif text-2xl font-medium">Tell me what you need</h3>
       <p class="text-muted mt-1.5 mb-5">Share your dates and a few details, and I'll get you a quote.</p>
-      <form id="quoteForm" class="space-y-3">
+      <form id="quoteForm" action="https://formspree.io/f/xljdrpkr" method="POST" class="space-y-3">
         <div class="grid sm:grid-cols-2 gap-3">
           <div>
             <label class="block text-[11px] font-semibold text-muted mb-1">YOUR NAME</label>
-            <input type="text" required class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition" placeholder="Your name" />
+            <input type="text" name="name" required class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition" placeholder="Your name" />
           </div>
           <div>
             <label class="block text-[11px] font-semibold text-muted mb-1">EMAIL</label>
-            <input type="email" required class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition" placeholder="you@email.com" />
+            <input type="email" name="email" required class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition" placeholder="you@email.com" />
           </div>
         </div>
         <div class="grid sm:grid-cols-2 gap-3">
           <div>
             <label class="block text-[11px] font-semibold text-muted mb-1">PHONE / WHATSAPP</label>
-            <input type="tel" class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition" placeholder="+86 ..." />
+            <input type="tel" name="phone" class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition" placeholder="+86 ..." />
           </div>
           <div>
             <label class="block text-[11px] font-semibold text-muted mb-1">WHAT DO YOU NEED?</label>
-            <select class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition">
+            <select name="service" class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition">
               <option>Trade-show interpreting</option>
               <option>Factory visit</option>
               <option>Escort interpretation</option>
@@ -724,9 +713,48 @@ tailwind.config = {
             </select>
           </div>
         </div>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[11px] font-semibold text-muted mb-1">CITY</label>
+            <select name="city" class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition">
+              <option value="">Select a city</option>
+              <optgroup label="Guangdong (Home)">
+                <option>Dongguan</option>
+                <option>Guangzhou</option>
+                <option>Shenzhen</option>
+                <option>Foshan</option>
+                <option>Zhongshan</option>
+                <option>Zhuhai</option>
+                <option>Huizhou</option>
+              </optgroup>
+              <optgroup label="South China">
+                <option>Hong Kong</option>
+                <option>Chaozhou</option>
+                <option>Chengdu</option>
+                <option>Chongqing</option>
+                <option>Guilin</option>
+                <option>Lijiang</option>
+                <option>Sanya</option>
+              </optgroup>
+              <optgroup label="East China">
+                <option>Shanghai</option>
+                <option>Hangzhou</option>
+                <option>Ningbo</option>
+                <option>Nanjing</option>
+                <option>Yiwu</option>
+              </optgroup>
+              <optgroup label="North China">
+                <option>Beijing</option>
+                <option>Xi'an</option>
+                <option>Harbin</option>
+              </optgroup>
+              <option>Other / Not sure</option>
+            </select>
+          </div>
+        </div>
         <div>
           <label class="block text-[11px] font-semibold text-muted mb-1">MESSAGE <span class="text-muted/50">(optional)</span></label>
-          <textarea rows="4" class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition resize-y" placeholder="Dates, city, and what you need..."></textarea>
+          <textarea name="message" rows="4" class="w-full px-3.5 py-2 rounded-lg border border-line bg-white text-sm focus:outline-none focus:border-accent transition resize-y" placeholder="Dates, city, and what you need..."></textarea>
         </div>
         <button type="submit" class="w-full bg-accent text-white py-3 rounded-full font-semibold text-sm hover:opacity-90 transition">Get my quote →</button>
         <p class="text-xs text-center text-muted mt-2"><i class="fas fa-lock mr-1"></i>Your enquiry comes straight to my inbox, not a mailing list.</p>
@@ -872,9 +900,26 @@ tailwind.config = {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   form.addEventListener('submit', e => {
     e.preventDefault();
-    alert('Thanks! Your enquiry has been sent. I will reply within 12 hours.');
-    form.reset();
-    closeModal();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.innerHTML = '<div class="text-center py-8"><div class="w-16 h-16 rounded-full bg-accent/15 flex items-center justify-center mx-auto mb-4"><i class="fas fa-check text-accent text-2xl"></i></div><h4 class="font-serif text-xl font-semibold">Thanks!</h4><p class="text-muted text-sm mt-2">Your enquiry has been sent. I will reply within 12 hours.</p></div>';
+      } else {
+        alert('Oops, something went wrong. Please email me directly or try again.');
+        submitBtn.textContent = 'Get my quote →';
+        submitBtn.disabled = false;
+      }
+    }).catch(() => {
+      alert('Oops, something went wrong. Please email me directly or try again.');
+      submitBtn.textContent = 'Get my quote →';
+      submitBtn.disabled = false;
+    });
   });
 
   // WeChat modal
