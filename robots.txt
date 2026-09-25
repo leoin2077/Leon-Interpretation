@@ -1,0 +1,5 @@
+e:\【2026 口译翻译&Sourcing Agent专题 兼职 线下 线上 以及其他英语兼职】\【2026 建站 翻译&境内游&Sourcing 】\9.12 trae ai生成 依据那个superinterpreter做的\robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://leonchinainterpreter.com/sitemap.xml
